@@ -2,6 +2,12 @@
 
 [![Standards Icon]][Standards Link] [![Format Code Icon]][Format Code Link] [![Scorecards Icon]][Scorecards Link] [![SCA Icon]][SCA Link] [![Terraform SCA Icon]][Terraform SCA Link]
 
+A Terraform module to create an AWS ChatBot Slack configuration. This module allows you to set up AWS ChatBot in your Slack channels and subscribe them to one or a list of SNS topics as required.
+
+**Please note** that you need to manually setup the Slack client for each AWS account following these steps: https://docs.aws.amazon.com/chatbot/latest/adminguide/slack-setup.html
+
+Once this has been actioned once per account you can subsequently create as many Slack channel configurations as required.
+
 ## Usage
 
 ```hcl
@@ -10,6 +16,8 @@ module "template" {
 
   source = "github.com/ministryofjustice/modernisation-platform-terraform-module-template"
 
+  slack_channel_id = "XXXXXXXXXXX" // #modernisation-platform-low-priority-alarms
+  sns_topic_arns   = ["arn:aws:sns:eu-west-2:${local.environment_management.account_ids[terraform.workspace]}:<name-of-sns-topic>"]
   tags             = local.tags
   application_name = local.application_name
 
