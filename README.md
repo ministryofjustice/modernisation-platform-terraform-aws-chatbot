@@ -39,12 +39,13 @@ If you're looking to raise an issue with this module, please create a new issue 
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.1 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
+| <a name="requirement_awscc"></a> [awscc](#requirement\_awscc) | ~> 1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_awscc"></a> [awscc](#provider\_awscc) | n/a |
+| <a name="provider_awscc"></a> [awscc](#provider\_awscc) | ~> 1.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
