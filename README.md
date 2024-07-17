@@ -57,7 +57,7 @@ No modules.
 |------|------|
 | [awscc_chatbot_slack_channel_configuration.this](https://registry.terraform.io/providers/hashicorp/awscc/latest/docs/resources/chatbot_slack_channel_configuration) | resource |
 | [awscc_iam_role.this](https://registry.terraform.io/providers/hashicorp/awscc/latest/docs/resources/iam_role) | resource |
-| [random_string.suffix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
 
@@ -73,7 +73,11 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_aws_chatbot_iam_role"></a> [aws\_chatbot\_iam\_role](#output\_aws\_chatbot\_iam\_role) | n/a |
+| <a name="output_aws_chatbot_slack_channel_arn"></a> [aws\_chatbot\_slack\_channel\_arn](#output\_aws\_chatbot\_slack\_channel\_arn) | n/a |
+| <a name="output_random_suffix"></a> [random\_suffix](#output\_random\_suffix) | n/a |
 <!-- END_TF_DOCS -->
 
 [Standards Link]: https://operations-engineering-reports.cloud-platform.service.justice.gov.uk/public-report/modernisation-platform-terraform-aws-chatbot "Repo standards badge."
