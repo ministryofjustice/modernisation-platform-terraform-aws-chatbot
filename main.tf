@@ -6,7 +6,7 @@
 // Once this has been actioned once per account you can subsequently create as many Slack channel configurations as required.
 
 resource "awscc_chatbot_slack_channel_configuration" "this" {
-  configuration_name = "slack-channel-config-${random_string.suffix.result}"
+  configuration_name = "slack-channel-config-${random_string.this.result}"
   iam_role_arn       = awscc_iam_role.this.arn
   slack_channel_id   = var.slack_channel_id
   slack_workspace_id = var.slack_workspace_id
@@ -16,7 +16,7 @@ resource "awscc_chatbot_slack_channel_configuration" "this" {
 
 // Creates a role for the AWS Chatbot - This defines what actions the Chatbot can perform within Slack.
 resource "awscc_iam_role" "this" {
-  role_name = "chatBot-channel-role-${random_string.suffix.result}"
+  role_name = "chatBot-channel-role-${random_string.this.result}"
   assume_role_policy_document = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -34,7 +34,7 @@ resource "awscc_iam_role" "this" {
 }
 
 // Create random suffix to ensure resource names are unique
-resource "random_string" "suffix" {
+resource "random_string" "this" {
   upper   = false
   special = false
   length  = 5

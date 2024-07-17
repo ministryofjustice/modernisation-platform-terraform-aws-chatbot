@@ -1,4 +1,4 @@
-module github.com/ministryofjustice/modernisation-platform-terraform-module-template
+module github.com/ministryofjustice/modernisation-platform-terraform-aws-chatbot
 
 go 1.22
 
