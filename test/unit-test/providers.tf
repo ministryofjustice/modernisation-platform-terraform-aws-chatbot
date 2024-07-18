@@ -6,6 +6,11 @@ provider "aws" {
   }
 }
 
+# AWS provider for awscc
+provider "awscc" {
+  region = "eu-west-2"
+}
+
 # AWS provider for the testing-ci user (testing-test account), to get things from there if required
 provider "aws" {
   alias  = "testing-ci-user"
