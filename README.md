@@ -4,9 +4,17 @@
 
 A Terraform module to create an AWS ChatBot Slack configuration. This module allows you to set up AWS ChatBot in your Slack channels and subscribe them to one or a list of SNS topics as required.
 
-**Please note** that you need to manually setup the Slack client for each AWS account following these steps: https://docs.aws.amazon.com/chatbot/latest/adminguide/slack-setup.html
+This offers an alternative to receiving alerts via PagerDuty as decribed in the Mod Platform [documnetation](https://user-guide.modernisation-platform.service.justice.gov.uk/user-guide/integrating-alarms-with-pagerduty-with-slack.html#integrating-cloudwatch-alarms-with-pagerduty-and-slack).
 
-Once this has been actioned once per account you can subsequently create as many Slack channel configurations as required.
+It can be used in conjunction with any existing CloudWatch alarms/SNS you already have set up to receive alerts directly to Slack and there is no extra cost for using the service!
+
+You might want to use this for non-critical type events that don't need to be raised via PagerDuty and dealt with immediately e.g. receiving AWS Health Events e.g. upcoming certificate expiry.
+
+## Initial Setup Required
+
+**Please note** that you need to manually setup the Slack client for each AWS account you wish to use with AWS Chatbot by following these steps: https://docs.aws.amazon.com/chatbot/latest/adminguide/slack-setup.html
+
+Once this has been actioned you can create as many Slack channel configurations as required using this module.
 
 ## Usage
 
@@ -14,9 +22,9 @@ Once this has been actioned once per account you can subsequently create as many
 
 module "template" {
 
-  source = "github.com/ministryofjustice/modernisation-platform-terraform-module-template"
+  source = "github.com/ministryofjustice/modernisation-platform-terraform-aws-chatbot"
 
-  slack_channel_id = "XXXXXXXXXXX" // #modernisation-platform-low-priority-alarms
+  slack_channel_id = "XXXXXXXXXXX"
   sns_topic_arns   = ["arn:aws:sns:eu-west-2:${local.environment_management.account_ids[terraform.workspace]}:<name-of-sns-topic>"]
   tags             = local.tags
   application_name = local.application_name
@@ -24,6 +32,18 @@ module "template" {
 }
 
 ```
+
+## Permissions
+
+You can fine-tune the permissions available to AWS Chatbot so that you can control what users receiving the alerts in Slack can do (e.g. query log insights, raise support requests or even trigger lambda functions)
+
+By default the module will assign the `arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess` policy to the chatbot iam role. You can amend this by supplying an alternative value to the `managed_policy_arns` variable.
+ This ensures that users can see information in the alerts on slack for the various alarms that have been triggered etc.  
+ For more detail on policies you may typically want to assign to the role read https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html  
+
+By default this module will assign a Guardrail policy of `arn:aws:iam::aws:policy/ReadOnlyAccess`. You can amend this by supplying an alternative value to the `guardrail_policies` variable.   
+For more detail read https://docs.aws.amazon.com/chatbot/latest/adminguide/understanding-permissions.html#channel-guardrails   
+
 <!--- BEGIN_TF_DOCS --->
 
 
