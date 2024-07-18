@@ -8,6 +8,10 @@ terraform {
       source  = "hashicorp/http"
       version = "~> 3.3"
     }
+    awscc = {
+      version = "~> 1.0"
+      source  = "hashicorp/awscc"
+    }
   }
   required_version = "~> 1.0"
 }
