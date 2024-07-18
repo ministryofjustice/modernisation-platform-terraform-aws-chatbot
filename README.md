@@ -1,4 +1,4 @@
-# Modernisation Platform Terraform Module Template 
+# Modernisation Platform Terraform AWS ChatBot 
 
 [![Standards Icon]][Standards Link] [![Format Code Icon]][Format Code Link] [![Scorecards Icon]][Scorecards Link] [![SCA Icon]][SCA Link] [![Terraform SCA Icon]][Terraform SCA Link]
 
