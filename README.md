@@ -8,11 +8,11 @@ This offers an alternative to receiving alerts via PagerDuty as decribed in the 
 
 It can be used in conjunction with any existing CloudWatch alarms/SNS you already have set up to receive alerts directly to Slack and there is no extra cost for using the service!
 
-You might want to use this for non-critical type events that don't need to be raised via PagerDuty e.g. receiving AWS Health Events e.g. upcoming certificate expiry.
+You might want to use this for non-critical type events that don't need to be raised via PagerDuty e.g. receiving AWS Health events, billing alerts or upcoming certificate expiry etc.
 
 ## Initial Setup Required
 
-**Please note** that you need to manually setup the Slack client for each AWS account you wish to use with AWS Chatbot by following these steps: https://docs.aws.amazon.com/chatbot/latest/adminguide/slack-setup.html
+**Please note** that you need to manually setup the Slack client for each AWS account you wish to use with AWS Chatbot by following these steps: https://docs.aws.amazon.com/chatbot/latest/adminguide/slack-setup.html#slack-client-setup
 
 Once this has been actioned you can create as many Slack channel configurations as required using this module.
 
@@ -37,11 +37,10 @@ module "template" {
 
 You can fine-tune the permissions available to AWS Chatbot so that you can control what users receiving the alerts in Slack can do (e.g. query log insights, raise support requests or even trigger lambda functions)
 
-By default the module will assign the `arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess` policy to the chatbot iam role. You can amend this by supplying an alternative value to the `managed_policy_arns` variable.
- This ensures that users can see information in the alerts on slack for the various alarms that have been triggered etc.  
- For more detail on policies you may typically want to assign to the role read https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html  
+By default the module will assign the `arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess` policy to the chatbot iam role. This ensures that users can see information in the alerts on slack for the various alarms that have been triggered etc. You can amend this by supplying an alternative value to the `managed_policy_arns` variable.  
+For more detail on policies you may typically want to assign to the role read https://docs.aws.amazon.com/chatbot/latest/adminguide/chatbot-iam-policies.html  
 
-By default this module will assign a Guardrail policy of `arn:aws:iam::aws:policy/ReadOnlyAccess`. You can amend this by supplying an alternative value to the `guardrail_policies` variable.   
+By default this module will assign a Guardrail policy of `arn:aws:iam::aws:policy/ReadOnlyAccess`. This will constrain and take precedence over both user roles and channel roles. You can amend this by supplying an alternative value to the `guardrail_policies` variable.  
 For more detail read https://docs.aws.amazon.com/chatbot/latest/adminguide/understanding-permissions.html#channel-guardrails   
 
 <!--- BEGIN_TF_DOCS --->
