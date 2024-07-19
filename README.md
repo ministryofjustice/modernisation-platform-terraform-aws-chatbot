@@ -8,7 +8,7 @@ This offers an alternative to receiving alerts via PagerDuty as decribed in the 
 
 It can be used in conjunction with any existing CloudWatch alarms/SNS you already have set up to receive alerts directly to Slack and there is no extra cost for using the service!
 
-You might want to use this for non-critical type events that don't need to be raised via PagerDuty e.g. receiving AWS Health Events e.g. upcoming certificate expiry.
+You might want to use this for non-critical type events that don't need to be raised via PagerDuty e.g. receiving AWS Health events, billing alerts or upcoming certificate expiry etc.
 
 ## Initial Setup Required
 
