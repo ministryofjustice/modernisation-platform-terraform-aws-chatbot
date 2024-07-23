@@ -2,13 +2,13 @@
 
 [![Standards Icon]][Standards Link] [![Format Code Icon]][Format Code Link] [![Scorecards Icon]][Scorecards Link] [![SCA Icon]][SCA Link] [![Terraform SCA Icon]][Terraform SCA Link]
 
-A Terraform module to create an AWS ChatBot Slack configuration. This module allows you to set up AWS ChatBot in your Slack channels and subscribe it to one or a list of SNS topics as required.
+A Terraform module to create an AWS ChatBot Slack channel configuration. This module allows you to set up AWS ChatBot in your Slack channels and subscribe to your SNS topics as required.
 
-This offers an alternative to receiving alerts via PagerDuty as decribed in the Mod Platform [documnetation](https://user-guide.modernisation-platform.service.justice.gov.uk/user-guide/integrating-alarms-with-pagerduty-with-slack.html#integrating-cloudwatch-alarms-with-pagerduty-and-slack).
+This offers an alternative to receiving alerts via PagerDuty as described in the Mod Platform [documentation](https://user-guide.modernisation-platform.service.justice.gov.uk/user-guide/integrating-alarms-with-pagerduty-with-slack.html#integrating-cloudwatch-alarms-with-pagerduty-and-slack).
 
-It can be used in conjunction with any existing CloudWatch alarms/SNS you already have set up to receive alerts directly to Slack and there is no extra cost for using the service!
+It can be used in conjunction with any existing SNS topics to receive alerts directly to Slack and there is no extra cost for using the service!
 
-You might want to use this for non-critical type events that don't need to be raised via PagerDuty e.g. receiving AWS Health events, billing alerts or upcoming certificate expiry etc.
+You might want to use this for non-critical type events that don't need to be raised via PagerDuty e.g. receiving AWS health events, billing alerts or upcoming certificate expiry etc.
 
 ## Initial Setup Required
 
