@@ -2,6 +2,7 @@ name: Secure Code Analysis
 on:
   schedule:
     - cron: '35 1 * * *'
+  workflow_dispatch:
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 permissions:
@@ -19,7 +20,7 @@ jobs:
           - ubuntu-latest
     steps:
       - name: Checkout source code
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           fetch-depth: 0
@@ -49,8 +50,8 @@ jobs:
     name: trivy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Run Trivy vulnerability scanner in repo mode
         uses: aquasecurity/trivy-action@6e7b7d1fd3e4fef0c5fa8cce1229c54b2c9bd0d8
@@ -60,7 +61,6 @@ jobs:
           format: 'sarif'
           output: 'trivy-results.sarif'
           severity: 'CRITICAL,HIGH'
-          trivyignores: ./.trivyignore.yaml
 
       - name: Upload Trivy scan results to GitHub Security tab
         if: success() || failure()
@@ -76,18 +76,19 @@ jobs:
       security-events: write
     steps:
       - name: Checkout repo
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           token: '${{ secrets.GITHUB_TOKEN }}'
           fetch-depth: 0
       - name: Run Checkov action
         id: checkov
-        uses: bridgecrewio/checkov-action@8b982845c18d56df5f5b290ae30b6857e7abfb00 # v12.2829.0
+        uses: bridgecrewio/checkov-action@88ed2939f667bb907c75d8c69d3737046baec704 # v12.2830.0
         with:
           directory: ./
           framework: terraform
           output_file_path: ./checkov.sarif
           output_format: sarif
+          quiet: true
           skip_check: CKV_GIT_1,CKV_AWS_126,CKV2_AWS_38,CKV2_AWS_39
       - name: Upload SARIF file
         if: success() || failure()
