@@ -58,14 +58,13 @@ If you're looking to raise an issue with this module, please create a new issue 
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.1 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 5.0 |
-| <a name="requirement_awscc"></a> [awscc](#requirement\_awscc) | ~> 1.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_awscc"></a> [awscc](#provider\_awscc) | ~> 1.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 5.0 |
 | <a name="provider_random"></a> [random](#provider\_random) | ~> 3.0 |
 
 ## Modules
@@ -76,8 +75,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [awscc_chatbot_slack_channel_configuration.this](https://registry.terraform.io/providers/hashicorp/awscc/latest/docs/resources/chatbot_slack_channel_configuration) | resource |
-| [awscc_iam_role.this](https://registry.terraform.io/providers/hashicorp/awscc/latest/docs/resources/iam_role) | resource |
+| [aws_chatbot_slack_channel_configuration.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/chatbot_slack_channel_configuration) | resource |
+| [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [random_string.this](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ## Inputs
@@ -88,7 +87,7 @@ No modules.
 | <a name="input_guardrail_policies"></a> [guardrail\_policies](#input\_guardrail\_policies) | A list of IAM policy ARNs that are applied as channel guardrails | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br>]</pre> | no |
 | <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | A list of policies arns to attach to the aws chatbot iam role as required | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess"<br>]</pre> | no |
 | <a name="input_slack_channel_id"></a> [slack\_channel\_id](#input\_slack\_channel\_id) | The Slack channel ID. Find the channel ID in Slack by right clicking on the channel in the channel list and copying the link. The channel ID is the string at the end of the URL. | `string` | n/a | yes |
-| <a name="input_slack_workspace_id"></a> [slack\_workspace\_id](#input\_slack\_workspace\_id) | The Slack workspace ID. Defaults to Ministry of Justice Slack workspace | `string` | `"T02DYEB3A"` | no |
+| <a name="input_slack_team_id"></a> [slack\_team\_id](#input\_slack\_team\_id) | The Slack workspace ID. Defaults to Ministry of Justice Slack workspace | `string` | `"T02DYEB3A"` | no |
 | <a name="input_sns_topic_arns"></a> [sns\_topic\_arns](#input\_sns\_topic\_arns) | ARNs of SNS topics which delivers notifications to AWS Chatbot, for example CloudWatch alarm notifications. | `list(string)` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Common tags to be used by all resources | `map(string)` | n/a | yes |
 
