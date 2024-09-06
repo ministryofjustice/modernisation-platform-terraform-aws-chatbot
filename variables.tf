@@ -12,7 +12,7 @@ variable "slack_channel_id" {
   description = "The Slack channel ID. Find the channel ID in Slack by right clicking on the channel in the channel list and copying the link. The channel ID is the string at the end of the URL."
 }
 
-variable "slack_workspace_id" {
+variable "slack_team_id" {
   type        = string
   default     = "T02DYEB3A" //Defaults to Justice Digital Slack Workspace
   description = "The Slack workspace ID. Defaults to Ministry of Justice Slack workspace"
