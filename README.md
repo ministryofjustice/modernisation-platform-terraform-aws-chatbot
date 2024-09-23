@@ -84,8 +84,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_application_name"></a> [application\_name](#input\_application\_name) | Name of application | `string` | n/a | yes |
-| <a name="input_guardrail_policies"></a> [guardrail\_policies](#input\_guardrail\_policies) | A list of IAM policy ARNs that are applied as channel guardrails | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br>]</pre> | no |
-| <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | A list of policies arns to attach to the aws chatbot iam role as required | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess"<br>]</pre> | no |
+| <a name="input_guardrail_policies"></a> [guardrail\_policies](#input\_guardrail\_policies) | A list of IAM policy ARNs that are applied as channel guardrails | `list(string)` | <pre>[<br/>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br/>]</pre> | no |
+| <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | A list of policies arns to attach to the aws chatbot iam role as required | `list(string)` | <pre>[<br/>  "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess"<br/>]</pre> | no |
 | <a name="input_slack_channel_id"></a> [slack\_channel\_id](#input\_slack\_channel\_id) | The Slack channel ID. Find the channel ID in Slack by right clicking on the channel in the channel list and copying the link. The channel ID is the string at the end of the URL. | `string` | n/a | yes |
 | <a name="input_slack_team_id"></a> [slack\_team\_id](#input\_slack\_team\_id) | The Slack workspace ID. Defaults to Ministry of Justice Slack workspace | `string` | `"T02DYEB3A"` | no |
 | <a name="input_sns_topic_arns"></a> [sns\_topic\_arns](#input\_sns\_topic\_arns) | ARNs of SNS topics which delivers notifications to AWS Chatbot, for example CloudWatch alarm notifications. | `list(string)` | n/a | yes |
