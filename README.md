@@ -100,8 +100,8 @@ No modules.
 | <a name="output_random_suffix"></a> [random\_suffix](#output\_random\_suffix) | n/a |
 <!-- END_TF_DOCS -->
 
-[Standards Link]: https://github-community.cloud-platform.service.justice.gov.uk/repository-standards/modernisation-platform-terraform-aws-chatbot "Repo standards badge."
-[Standards Icon]: https://github-community.cloud-platform.service.justice.gov.uk/repository-standards/api/modernisation-platform-terraform-aws-chatbot/badge
+[Standards Link]: https://github-community.service.justice.gov.uk/repository-standards/modernisation-platform-terraform-aws-chatbot "Repo standards badge."
+[Standards Icon]: https://github-community.service.justice.gov.uk/repository-standards/api/modernisation-platform-terraform-aws-chatbot/badge
 [Format Code Icon]: https://img.shields.io/github/actions/workflow/status/ministryofjustice/modernisation-platform-terraform-aws-chatbot/format-code.yml?labelColor=231f20&style=for-the-badge&label=Formate%20Code
 [Format Code Link]: https://github.com/ministryofjustice/modernisation-platform-terraform-aws-chatbot/actions/workflows/format-code.yml
 [Scorecards Icon]: https://img.shields.io/github/actions/workflow/status/ministryofjustice/modernisation-platform-terraform-aws-chatbot/scorecards.yml?branch=main&labelColor=231f20&style=for-the-badge&label=Scorecards
