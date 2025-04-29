@@ -30,9 +30,14 @@ resource "aws_iam_role" "this" {
       },
     ]
   })
-  managed_policy_arns = var.managed_policy_arns
 }
+// Attach the AWS managed policies to the IAM role
+resource "aws_iam_role_policy_attachment" "this" {
+  for_each = toset(var.managed_policy_arns)
 
+  role       = aws_iam_role.this.name
+  policy_arn = each.value
+}
 // Create random suffix to ensure resource names are unique
 resource "random_string" "this" {
   upper   = false
