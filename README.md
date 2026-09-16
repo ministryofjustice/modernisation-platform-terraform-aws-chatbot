@@ -55,7 +55,7 @@ If you're looking to raise an issue with this module, please create a new issue 
 ## Requirements
 
 | Name | Version |
-| ------ | --------- |
+|------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 6.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.0 |
@@ -74,7 +74,7 @@ No modules.
 ## Resources
 
 | Name | Type |
-| ------ | ------ |
+|------|------|
 | [aws_chatbot_slack_channel_configuration.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/chatbot_slack_channel_configuration) | resource |
 | [aws_iam_role.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
@@ -83,7 +83,7 @@ No modules.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-| ------ | ------------- | ------ | --------- | :--------: |
+|------|-------------|------|---------|:--------:|
 | <a name="input_application_name"></a> [application\_name](#input\_application\_name) | Name of application | `string` | n/a | yes |
 | <a name="input_guardrail_policies"></a> [guardrail\_policies](#input\_guardrail\_policies) | A list of IAM policy ARNs that are applied as channel guardrails | `list(string)` | <pre>[<br/>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br/>]</pre> | no |
 | <a name="input_managed_policy_arns"></a> [managed\_policy\_arns](#input\_managed\_policy\_arns) | A list of policies arns to attach to the aws chatbot iam role as required | `list(string)` | <pre>[<br/>  "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess"<br/>]</pre> | no |
@@ -95,7 +95,7 @@ No modules.
 ## Outputs
 
 | Name | Description |
-| ------ | ------------- |
+|------|-------------|
 | <a name="output_aws_chatbot_iam_role"></a> [aws\_chatbot\_iam\_role](#output\_aws\_chatbot\_iam\_role) | n/a |
 | <a name="output_aws_chatbot_slack_channel_arn"></a> [aws\_chatbot\_slack\_channel\_arn](#output\_aws\_chatbot\_slack\_channel\_arn) | n/a |
 | <a name="output_random_suffix"></a> [random\_suffix](#output\_random\_suffix) | n/a |
