@@ -34,3 +34,9 @@ variable "managed_policy_arns" {
   description = "A list of policies arns to attach to the aws chatbot iam role as required"
   default     = ["arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess"]
 }
+
+variable "user_authorization_required" {
+  description = "Require individual IAM user roles for Slack channel actions"
+  type        = bool
+  default     = false
+}

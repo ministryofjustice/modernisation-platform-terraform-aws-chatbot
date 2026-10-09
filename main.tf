@@ -12,6 +12,8 @@ resource "aws_chatbot_slack_channel_configuration" "this" {
   slack_team_id         = var.slack_team_id
   sns_topic_arns        = var.sns_topic_arns
   guardrail_policy_arns = var.guardrail_policies
+
+  user_authorization_required = var.user_authorization_required
 }
 
 // Creates a role for the AWS Chatbot - This defines what actions the Chatbot can perform within Slack.

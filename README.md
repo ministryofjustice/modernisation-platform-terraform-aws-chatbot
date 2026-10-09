@@ -91,6 +91,7 @@ No modules.
 | <a name="input_slack_team_id"></a> [slack\_team\_id](#input\_slack\_team\_id) | The Slack workspace ID. Defaults to Ministry of Justice Slack workspace | `string` | `"T02DYEB3A"` | no |
 | <a name="input_sns_topic_arns"></a> [sns\_topic\_arns](#input\_sns\_topic\_arns) | ARNs of SNS topics which delivers notifications to AWS Chatbot, for example CloudWatch alarm notifications. | `list(string)` | n/a | yes |
 | <a name="input_tags"></a> [tags](#input\_tags) | Common tags to be used by all resources | `map(string)` | n/a | yes |
+| <a name="input_user_authorization_required"></a> [user\_authorization\_required](#input\_user\_authorization\_required) | Require individual IAM user roles for Slack channel actions | `bool` | `false` | no |
 
 ## Outputs
 
